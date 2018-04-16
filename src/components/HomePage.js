@@ -99,22 +99,6 @@ export default class HomePage extends Component {
                         </CardItem>
                     </Card>
                 </Content>
-                <Footer>
-                    <FooterTab style = {{backgroundColor: '#00a574'}}>
-                        <Button vertical transparent>
-                            <Icon name = 'ios-home-outline' style = {{color: '#fff'}}/>
-                            <Text style = {{color: '#fff'}}>Home</Text>
-                        </Button>
-                        <Button vertical transparent>
-                            <Icon name = 'ios-book-outline' style = {{color: '#fff'}}/>
-                            <Text style = {{color: '#fff'}}>Library</Text>
-                        </Button>
-                        <Button vertical transparent>
-                            <Icon name = 'ios-person-outline' style = {{color: '#fff'}}/>
-                            <Text style = {{color: '#fff'}}>User</Text>
-                        </Button>
-                    </FooterTab>
-                </Footer>
             </Container>
         );
     }

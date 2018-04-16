@@ -1,6 +1,8 @@
 import React from 'react';
 import Expo from 'expo';
 import HomePage from './src/components/HomePage';
+import User from './src/components/User';
+import { Tabs } from './src/Router';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -26,6 +28,6 @@ export default class App extends React.Component {
     if (!this.state.isReady) {
       return <Expo.AppLoading/>;
     }
-    return <HomePage/>;
+    return <Tabs/>;
   }
 }
