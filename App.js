@@ -3,6 +3,9 @@ import Expo from 'expo';
 import HomePage from './src/components/HomePage';
 import User from './src/components/User';
 import MainStack from './src/Router';
+import getTheme from './native-base-theme/components';
+import material from './native-base-theme/variables/material';
+import { StyleProvider } from 'native-base';
 
 export default class App extends React.Component {
   constructor(props) {

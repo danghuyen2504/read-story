@@ -11,7 +11,7 @@ import {Container,
         FooterTab,
         Button,
         Card,
-        CardItem
+        CardItem,
 } from 'native-base';
 import { FlatList, TouchableOpacity } from 'react-native';
 
@@ -69,44 +69,46 @@ export default class HomePage extends Component {
 
     render() {
         return (
-            <Container>
-                <Content padder>
-                    <Card>
-                        <CardItem>
-                            <View style = {{flexDirection: 'column', flex: 1}}>
-                                <View style = {{flexDirection: 'row', marginBottom: 10}}>
-                                    <Text style = {{flex: 1}}>Recommended</Text>
-                                    <TouchableOpacity>
-                                        <Text>MORE</Text>
-                                    </TouchableOpacity>
+            <StyleProvider style = {getTheme(material)}>
+                <Container>
+                    <Content padder>
+                        <Card>
+                            <CardItem>
+                                <View style = {{flexDirection: 'column', flex: 1}}>
+                                    <View style = {{flexDirection: 'row', marginBottom: 10}}>
+                                        <Text style = {{flex: 1}}>Recommended</Text>
+                                        <TouchableOpacity>
+                                            <Text>MORE</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                    <FlatList   data = {this.state.data}
+                                                renderItem = {this._renderItem}
+                                                horizontal = {true}
+                                                keyExtractor = {item => item.id}>
+                                    </FlatList>
                                 </View>
-                                <FlatList   data = {this.state.data}
-                                            renderItem = {this._renderItem}
-                                            horizontal = {true}
-                                            keyExtractor = {item => item.id}>
-                                </FlatList>
-                            </View>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <View style = {{flexDirection: 'column', flex: 1}}>
-                                <View style = {{flexDirection: 'row', marginBottom: 10}}>
-                                    <Text style = {{flex: 1}}>Recommended</Text>
-                                    <TouchableOpacity>
-                                        <Text>MORE</Text>
-                                    </TouchableOpacity>
+                            </CardItem>
+                        </Card>
+                        <Card>
+                            <CardItem>
+                                <View style = {{flexDirection: 'column', flex: 1}}>
+                                    <View style = {{flexDirection: 'row', marginBottom: 10}}>
+                                        <Text style = {{flex: 1}}>Recommended</Text>
+                                        <TouchableOpacity>
+                                            <Text>MORE</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                    <FlatList   data = {this.state.data}
+                                                renderItem = {this._renderItem}
+                                                horizontal = {true}
+                                                keyExtractor = {item => item.id}>
+                                    </FlatList>
                                 </View>
-                                <FlatList   data = {this.state.data}
-                                            renderItem = {this._renderItem}
-                                            horizontal = {true}
-                                            keyExtractor = {item => item.id}>
-                                </FlatList>
-                            </View>
-                        </CardItem>
-                    </Card>
-                </Content>
-            </Container>
+                            </CardItem>
+                        </Card>
+                    </Content>
+                </Container>
+            </StyleProvider>
         );
     }
 }
