@@ -1,30 +1,21 @@
 import React from 'react';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 
 import HomePage from './components/HomePage';
 import Library from './components/Library';
 import User from './components/User';
-import { Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { Footer, FooterTab, Button, Icon, Text, Header, Item, Input } from 'native-base';
 
-export const Tabs = TabNavigator(
+const Tabs = TabNavigator(
     {
         HomeScreen: {
             screen: HomePage,
-            navigationOptions: {
-                header: null,
-            }
         },
         LibraryScreen: {
             screen: Library,
-            navigationOptions: {
-                header: null,
-            }
         },
         UserScreen: {
             screen: User,
-            navigationOptions: {
-                header: null,
-            }
         }
     },
     {
@@ -57,3 +48,7 @@ export const Tabs = TabNavigator(
         },
     }
 );
+
+export default StackNavigator({
+    MainStack: {screen: Tabs}
+})

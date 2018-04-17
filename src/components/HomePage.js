@@ -16,6 +16,21 @@ import {Container,
 import { FlatList, TouchableOpacity } from 'react-native';
 
 export default class HomePage extends Component {
+    static navigationOptions = ({navigation}) => ({
+        header: (
+            <View>
+                <View style = {{height: 23, backgroundColor: '#00a574'}}/>
+                <Header searchBar rounded hasTabs
+                        style = {{backgroundColor: '#00a574'}}>
+                    <Item>
+                        <Icon name = 'ios-search'/>
+                        <Input placeholder = 'Search'/>
+                    </Item>
+                </Header>
+            </View>
+        )
+    });
+
     constructor(props) {
         super(props);
         this.state = {
@@ -55,14 +70,6 @@ export default class HomePage extends Component {
     render() {
         return (
             <Container>
-                <View style = {{height: 23, backgroundColor: '#00a574'}}/>
-                <Header searchBar rounded
-                        style = {{backgroundColor: '#00a574'}}>
-                    <Item>
-                        <Icon name = 'ios-search'/>
-                        <Input placeholder = 'Search'/>
-                    </Item>
-                </Header>
                 <Content padder>
                     <Card>
                         <CardItem>
